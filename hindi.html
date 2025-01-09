@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Project</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #00b300, #1e90ff); /* Green to Blue Gradient */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .heading-container {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .heading-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        /* Display the page when it's active */
+        .active {
+            display: block;
+        }
+
+        /* Navigation buttons */
+        .nav-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #1e90ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .nav-btn:hover {
+            background-color: #1e90ff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heading-container page active" id="page1">
+        <h1>Hindi Project</h1>
+        <img src="file:///C:/Users/getsh_ww9g2g3/OneDrive/Desktop/integrated%20projects/IMG_20250105_181551_571.jpg" alt="Hindi Project Image 1">
+        <button class="nav-btn" onclick="showPage(2)">Next</button>
+    </div>
+
+    <div class="heading-container page" id="page2">
+        <h1>Hindi Project</h1>
+        <img src="file:///C:/Users/getsh_ww9g2g3/OneDrive/Desktop/integrated%20projects/IMG_20250105_181600_735.jpg" alt="Hindi Project Image 2">
+        <button class="nav-btn" onclick="showPage(1)">Back</button>
+    </div>
+
+    <script>
+        function showPage(pageNumber) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show the selected page
+            const activePage = document.getElementById('page' + pageNumber);
+            activePage.classList.add('active');
+        }
+    </script>
+</body>
+</html>
